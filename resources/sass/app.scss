@@ -1,0 +1,85 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~trumbowyg/dist/ui/sass/trumbowyg';
+main{
+    min-height: 100vh;
+}
+.request-card{
+    .card{
+        position: relative;
+        .badge{
+            color:white;
+            position: absolute;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            padding:8px;
+            right:-15px;
+            top:-15px;
+            overflow-wrap: break-word;
+        }
+    }
+}
+.file-label{
+    position: relative;
+    .upload-logo{
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        width: 100%;
+        top:175px;
+        text-shadow: 0 0 10px #000;
+    }
+}
+.up-img{
+    width:250px; height:250px; display:block;
+}
+.cr-slider-wrap{margin:auto;}
+
+.footer{
+    background-image: url('../image/wave.svg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-origin: border-box;
+    background-position: center;
+    position: relative;
+    bottom: 0;
+    .container{        
+        position:absolute;
+        top:180px;
+        right:0;
+        left:0;   
+        color:#fff;
+        a{
+            color:#fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.input-inside{
+    position: absolute;
+    z-index: 10;
+    display: block;
+    right:10px;
+    line-height: 1;
+    top:10px;
+    color:#62667e;
+}
+.input-insider{
+    position: absolute;
+    z-index: 10;
+    display: block;
+    right:43%;
+    line-height: 1;
+    top:10px;
+    color:#62667e;
+}
