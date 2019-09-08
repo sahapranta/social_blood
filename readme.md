@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/sahapranta/social_blood/blob/master/public/image/icons/blood.png"></p>
+<p align="center"><img src="https://github.com/sahapranta/social_blood/blob/master/public/image/icons/blood.png" width="60"></p>
 
 <p align="center">
 <a href="https://socialblood.000webhostapp.com/"><img src="https://travis-ci.org/sahapranta/social_blood.svg" alt="Build Status"></a>
@@ -12,7 +12,7 @@
 
 This is a simple basic laravel 5.8 and vue based practice. The idea was creating a social platform where people can share there need for blood and others who want to donate can wish and contact to respective person.
 
-** [Live](https://socialblood.000webhostapp.com/) **
+** [View Live Here](https://socialblood.000webhostapp.com/) **
 
 - User can register with email and blood group
 - After Registration he/she need to complete profile information [skipable]
