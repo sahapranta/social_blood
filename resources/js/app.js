@@ -48,6 +48,7 @@ window.onload = ()=>{
   });  
 
   
+
   $('.upload-container').hide();
   let croppie_options = {
       type: 'base64',
@@ -65,25 +66,28 @@ window.onload = ()=>{
     enableExif: true
   };
 
-  $uploadCrop = $('.upload').croppie(croppie_init);
-
-  function readURL1(input) {
+  $cropieImage = $('.upload').croppie(croppie_init);
+let rawImage;
+  function readURLa(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();        
           reader.onload = function (e) {
-              rawImg = e.target.result;                    
+              rawImage = e.target.result;                    
               $('.upload-container').show();
               $('.custom-file').hide();
-              $uploadCrop.croppie('bind', {
-                  url: rawImg
-              });                                       
+              $cropieImage.croppie('bind', {
+                url: rawImage
+            }).then(()=>{
+              //   console.log('bind');
+            });                                                  
           }
           reader.readAsDataURL(input.files[0]);
       }
   }
 
   $('#file').on('change', function(){
-      readURL1(this);
+      readURLa(this);
+      
   });
 
   $('#cancelCropImage').on('click', function () {
@@ -92,7 +96,7 @@ window.onload = ()=>{
   });
 
   $('#cropImage').on('click', function () {
-      $uploadCrop.croppie('result', croppie_options).then(function (resp) {
+      $cropieImage.croppie('result', croppie_options).then(function (resp) {
           $('.upload-container').hide();
           $('#avatar').attr('src', resp);
           $('.custom-file').show();
@@ -117,6 +121,8 @@ window.onload = ()=>{
         $('#imgEdit').on('shown.bs.modal', function(e){                                                
             $uploadCrop.croppie('bind', {
                 url: rawImg
+            }).then(()=>{
+                // console.log('bind');
             });
         });
 

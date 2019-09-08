@@ -8,6 +8,7 @@
             </div>
             <p>{{$blood->location}}</p>
             <h5 class="mb-3">Need Before: {{date("d M", strtotime($blood->required_date))}}</h5> 
+            @auth
             @if(Auth::id() === $blood->user_id)
             <div class="btn-group btn-block" role="group" aria-label="Basic example">
                 <a type="button" class="btn btn-outline-danger" 
@@ -19,7 +20,6 @@
                 </form>
                 <a type="button" class="btn btn-outline-dark" href="{{route('blood_request.edit', $blood)}}">Update</a>                
             </div>
-            @auth
                 @elseif(Auth::user()->blood_group === $blood->blood_group)
                     <button type="button" class="btn btn-lg btn-block btn-outline-danger"
                     onclick="event.preventDefault(); document.getElementById('request-accept-{{$blood->id}}').submit()">
@@ -86,14 +86,13 @@
                         @if(Auth::id() === $blood->user_id)
                             <div class="d-flex flex-column justify-content-center">
                                 <small class="text-center mr-2">Donated</small>
-                                <label class="switch switch-left-right">
-                                    <input class="switch-input" type="checkbox" 
+                                <div class="custom-control custom-switch">
+                                    <input class="custom-control-input" type="checkbox" 
                                     onclick="event.preventDefault(); document.getElementById('request-donate-{{$donor->id}}').submit()"
                                     id="switch-{{$donor->id}}" 
                                     {{$donor->isDonated($blood->id) ? 'checked' : ''}}>
-                                    <span class="switch-label" data-on="YES" data-off="NO"></span>
-                                    <span class="switch-handle"></span>
-                                </label>                            
+                                    <label class="custom-control-label" for="switch-{{$donor->id}}"></label>
+                                </div>                            
                             </div>
                             <form action="{{route('blood_request.donate',[$donor->name, $blood->id] )}}" id="request-donate-{{$donor->id}}" method="post">
                                 @if($donor->isDonated($blood->id))

@@ -64,7 +64,10 @@ main{
         }
     }
 }
-
+.upload-container{
+    height: 250px;
+    width: 80%;    
+}
 .input-inside{
     position: absolute;
     z-index: 10;

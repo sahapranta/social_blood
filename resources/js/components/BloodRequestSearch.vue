@@ -15,8 +15,8 @@
                         </div>                            
                     </div>
                 </div>
-                <div class="search-list" v-if="searching">                    
-                    <a :href="'blood_request/'+ result[1].id" v-for="result in results" :key="result[1].id">Need {{result[1].blood_group}} blood in {{result[1].location}} before {{new Date(result[1].required_date).toLocaleDateString()}}.</a>                    
+                <div class="search-list1" v-if="searching">                    
+                    <a :href="'blood_request/'+ result[1].id" v-for="result in results" :key="result[1].id">Need {{result[1].blood_group}} blood in {{result[1].location}} before {{new Date(result[1].required_date).toLocaleDateString()}}. <hr/></a> 
                 </div>              
             </div>
         </div>
@@ -57,7 +57,7 @@
 </script>
 
 <style>
-.search-list{
+.search-list1{
     display: block;
     position: absolute;
     z-index: 99999;
@@ -65,7 +65,10 @@
     background: #fcfcfc;
     box-shadow: 1px 1px 3px 5px rgba(0,0,0,0.1);
     padding: 10px;
-    height: 280px;
+    max-height: 280px;
+    right: 11%;
     overflow-y: auto;
+    left: 2%;
+    top: 50px;
 }
 </style>
