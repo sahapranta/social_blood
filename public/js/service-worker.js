@@ -1,15 +1,13 @@
 "use strict";
 
-var version = 'v2::';
+var version = 'v2';
 
 var offlineFundamentals = [
   '/',
   'css/app.css',
   'js/app.js',
   'images/wave.svg',
-  'image/blood.svg',
-  'image/bg-1.png',
-  'image/bg-2.png',
+  'image/blood.svg'
 ];
 
 
