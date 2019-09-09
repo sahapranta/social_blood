@@ -46,8 +46,9 @@
 
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//foliotek.github.io">
-    <script src="https://foliotek.github.io/Croppie/croppie.js" defer></script>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://foliotek.github.io/Croppie/croppie.js" defer></script>
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
