@@ -9,20 +9,19 @@ event.waitUntil(
           '/js/app.js',
           '/images/wave.svg',
           '/image/blood.svg',
+          'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+          'https://foliotek.github.io/Croppie/croppie.js',
+          'https://foliotek.github.io/Croppie/croppie.css',
         ]);
     })
  );
 });
 
-self.addEventListener("fetch", function(event) { 
-	event.respondWith( 
-		return caches.match(event.request)
-			.then(function (response) { 
-				return response || fetch(event.request)
-			.then(function(response) { 
-				cache.put(event.request, response.clone());
-				return response; 
-			}); 
-		}) 
-	); 
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
 });
+
