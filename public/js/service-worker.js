@@ -1,7 +1,3 @@
-// "use strict";
-
-var version = 'v2';
-
 var offlineFundamentals = [
   '/',
   'css/app.css',
@@ -11,16 +7,13 @@ var offlineFundamentals = [
 ];
 
 
-self.addEventListener("install", function(event) {
-  event.waitUntil(
-    caches     
-      .open(version + 'fundamentals')
-      .then(function(cache) {
-        return cache.addAll(offlineFundamentals);
-      })
-  );
+self.addEventListener('install', function(event) {
+event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      return cache.addAll(offlineFundamentals);
+    })
+ );
 });
-
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
