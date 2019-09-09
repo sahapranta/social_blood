@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>{{ config('app.name', 'Social Blood') }}</title>
+        <link rel="manifest" href="{{asset('/manifest.json')}}" />
     <link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('image/icons/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('image/icons/apple-icon-60x60.png')}}">
@@ -23,46 +24,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('image/icons/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('image/icons/favicon-96x96.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('image/icons/favicon-16x16.png')}}">
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="copyright"content="Pranta Saha">
-    <meta name="language" content="EN">
+    <meta name="language" content="en">
     <meta name="coverage" content="Worldwide">
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
     <meta name="theme-color" content="#f84d61">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Application Title">
+    <meta name="apple-mobile-web-app-title" content="social_blood">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="msapplication-navbutton-color" content="#f84d61">
     <meta name="msapplication-TileColor" content="#f84d61">
     <meta name="msapplication-TileImage" content="{{ asset('image/icons/ms-icon-144x144.png') }}">
-    <meta name="msapplication-config" content="browserconfig.xml">
-    <meta name="application-name" content="Application Name">
-    <meta name="msapplication-tooltip" content="Tooltip Text">
+    <meta name="msapplication-config" content="{{asset('browserconfig.xml')}}">
+    <meta name="application-name" content="social_blood">
+    <meta name="msapplication-tooltip" content="social_blood">
     <meta name="msapplication-starturl" content="/">
         <!-- Tap highlighting  -->
     <meta name="msapplication-tap-highlight" content="no">
-    <link rel="manifest" href="manifest.json" />
 
-    <!-- UC Mobile Browser  -->
-    <meta name="full-screen" content="yes">
-    <meta name="browsermode" content="application">
 
-   
-
-    <!-- Fitscreen  -->
-    <meta name="viewport" content="uc-fitscreen=yes"/>
-
-    <!-- Layout mode -->
-    <meta name="layoutmode" content="standard">
-
-    <!-- imagemode - show image even in text only mode  -->
-    <meta name="imagemode" content="force">
-
-    <!-- Orientation  -->
-    <meta name="screen-orientation" content="portrait">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//foliotek.github.io">
