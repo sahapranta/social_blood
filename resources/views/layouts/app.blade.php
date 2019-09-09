@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>{{ config('app.name', 'Social Blood') }}</title>
-        <link rel="manifest" href="{{asset('/manifest.json')}}" />
+     <link rel="manifest" href="{{asset('/manifest.json')}}" />
     <link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('image/icons/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('image/icons/apple-icon-60x60.png')}}">
@@ -44,15 +44,11 @@
         <!-- Tap highlighting  -->
     <meta name="msapplication-tap-highlight" content="no">
 
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//foliotek.github.io">
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://foliotek.github.io/Croppie/croppie.js" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     
-   
-    <link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon" />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="https://foliotek.github.io/Croppie/croppie.css" rel="stylesheet" />
@@ -126,6 +122,20 @@
         <div class="container">
             <span class="text">Copyright &copy; {{ now()->year }} Social Blood By <a href="https://sahapranta.github.io" target="_blank">Pranta Saha</a></span>
 		</div>
-	</footer>    
+	</footer>
+    <script type="text/javascript">
+        (function() {
+          if ('serviceWorker' in navigator) {
+            console.log('CLIENT: service worker registration in progress.');
+            navigator.serviceWorker.register('https://socialblood.herokuapp.com/js/service-worker.js').then(function() {
+              console.log('CLIENT: service worker registration complete.');
+            }, function() {
+              console.log('CLIENT: service worker registration failure.');
+            });
+          } else {
+            console.log('CLIENT: service worker is not supported.');
+          }
+        })();
+    </script>
 </body>
 </html>
