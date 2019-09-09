@@ -43,9 +43,9 @@
                             <label for="blood_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">                                
-                                <select id="blood_group" class="form-control @error('blood_group') is-invalid @enderror" name="blood_group" value="{{ old('blood_group') }}" required>                                    
-                                    @foreach(array(' '=> 'Group Needed', 'a+' => 'A+', 'b+' => 'B+', 'o+' => 'O+', 'ab+' => 'AB+', 'a-' => 'A-', 'b-' => 'B-', 'o-' => 'O-', 'ab-' => 'AB-') as $key => $val)                                                
-                                        <option value="{{$key}}">{{$val}}</option>
+                                <select id="blood_group" class="form-control @error('blood_group') is-invalid @enderror" name="blood_group" required>                                    
+                                    @foreach(array(' '=> 'Your Group', 'a+' => 'A+', 'b+' => 'B+', 'o+' => 'O+', 'ab+' => 'AB+', 'a-' => 'A-', 'b-' => 'B-', 'o-' => 'O-', 'ab-' => 'AB-') as $key => $val)                                                
+                                        <option value="{{$key}}" {{ old('blood_group') === $key ? 'selected' : '' }}>{{$val}}</option>
                                     @endforeach
                                 </select>
 
