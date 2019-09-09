@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 var version = 'v2';
 
