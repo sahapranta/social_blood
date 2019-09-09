@@ -4,7 +4,9 @@
 <a href="https://socialblood.000webhostapp.com/"><img src="https://travis-ci.org/sahapranta/social_blood.svg" alt="Build Status"></a>
 <a href="https://david-dm.org/sahapranta/social_blood"><img src="https://david-dm.org/sahapranta/social_blood.svg" alt="Dependencies"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<img alt="GitHub" src="https://img.shields.io/github/license/sahapranta/social_blood" alt='license'>
+    
+ <img alt="Heroku" src="https://heroku-badge.herokuapp.com/?app=socialblood" >
+<img src="https://img.shields.io/github/license/sahapranta/social_blood" alt='license'>
 
 </p>
 
