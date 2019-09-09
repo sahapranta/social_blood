@@ -1,16 +1,13 @@
-var offlineFundamentals = [
-  '/',
-  'css/app.css',
-  'js/app.js',
-  'images/wave.svg',
-  'image/blood.svg'
-];
-
-
 self.addEventListener('install', function(event) {
 event.waitUntil(
     caches.open('v1').then(function(cache) {
-      return cache.addAll(offlineFundamentals);
+      return cache.addAll([
+          '/',
+          '/css/app.css',
+          '/js/app.js',
+          '/images/wave.svg',
+          '/image/blood.svg',
+        ]);
     })
  );
 });
