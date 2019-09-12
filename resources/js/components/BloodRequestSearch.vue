@@ -5,10 +5,8 @@
                 <div class="input-group input-group-lg">
                     <input type="text" name="search_request"  class="form-control" v-model="search">
                     <div class="input-group-append">                        
-                        <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true">Search </button>
-                        <div class="dropdown-menu">
-                            <span class="dropdown-item" href="#">Search Filter</span>
-                            <div role="separator" class="dropdown-divider"></div>
+                        <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true">Filter </button>
+                        <div class="dropdown-menu">                           
                             <span class="dropdown-item"><input type="radio" name="filter" v-model="search_filter" value="blood_group"> Blood Group</span>                        
                             <span class="dropdown-item"><input type="radio" name="filter" v-model="search_filter" value="location"> Location</span>                        
                             <span class="dropdown-item"><input type="radio" name="filter" v-model="search_filter" value="required_date"> Date</span>                        

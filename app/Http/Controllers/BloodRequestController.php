@@ -46,7 +46,7 @@ class BloodRequestController extends Controller
             ->bloodRequest()
             ->create($request->only('description','required_date', 'blood_group', 'location'));
         return redirect('/home')
-                ->with('success', 'Your Question Successfully Posted');
+                ->with('success', 'Your Request Successfully Posted');
     }
 
   
@@ -71,7 +71,7 @@ class BloodRequestController extends Controller
  
     public function update(Request $request, BloodRequest $bloodRequest)
     {
-        $bloodRequest->update($request->only('required_date', 'description', 'location'));
+        $bloodRequest->update($request->only('required_date', 'description', 'location', 'blood_group'));
         return redirect()->route('blood_request.show', $bloodRequest)->with('success', 'Your Request has been Updated');
     }
 

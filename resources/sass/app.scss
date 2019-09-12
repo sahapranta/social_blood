@@ -86,3 +86,18 @@ main{
     top:10px;
     color:#62667e;
 }
+
+.text-wrap{
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    display: inherit;
+}
+
+.red-shade{
+    background: linear-gradient(to top, #ff416c, #ff4b2b);
+}
+
+.card-shade{
+    background: linear-gradient(to top, #ffd4d4, #fff3cd);
+}

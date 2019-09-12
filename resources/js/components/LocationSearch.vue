@@ -3,7 +3,7 @@
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Location</label>
         </div> 
-        <input @focus="searching=true" class="form-control" :class="error ? 'is-invalid' :''" type="text" v-model="address" name="location" placeholder="Location Where Needed"/> 
+        <input @focus="searching=true" class="form-control" :class="error ? 'is-invalid' :''" type="text" v-model="address" name="location" placeholder="Location Where Needed" autocomplete="off"/> 
         <slot></slot>
         <div class="search-list" v-if="searching">                    
             <a v-for="(result, i) in results" :key="i" @click="choice">{{result.Address}} <hr></a>           
@@ -18,7 +18,7 @@
         data(){
             return{
                 searching:false,                
-                address:this.old || '',
+                address:this.old === 'true' ? this.old : '',
                 results:[],
             }
         },

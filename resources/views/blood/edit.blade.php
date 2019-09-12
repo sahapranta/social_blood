@@ -31,9 +31,9 @@
                                         <div class="input-group-prepend">
                                             <label class="input-group-text" >Blood</label>
                                         </div>                                
-                                        <select id="blood_group" class="form-control @error('blood_group') is-invalid @enderror" name="blood_group" value="{{ old('blood_group', $blood->blood_group) }}" required>
+                                        <select id="blood_group" class="form-control @error('blood_group') is-invalid @enderror" name="blood_group" required>
                                             @foreach(array(' '=> 'Group Needed', 'a+' => 'A+', 'b+' => 'B+', 'o+' => 'O+', 'ab+' => 'AB+', 'a-' => 'A-', 'b-' => 'B-', 'o-' => 'O-', 'ab-' => 'AB-') as $key => $val)                                                
-                                                <option value="{{$key}}" {{($key === $blood->blood_group)? 'selected': ''}}>{{$val}}</option>
+                                            <option value="{{$key}}" {{old('blood_group', $blood->blood_group) === $key ? 'selected' : ''}}>{{$val}}</option>
                                             @endforeach
                                         </select>
                                        
