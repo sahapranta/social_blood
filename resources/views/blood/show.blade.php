@@ -12,9 +12,9 @@
                         </g>
                     </g>
                     @if(strlen($blood->blood_group) > 2)
-                    <text transform="matrix(1 0 0 1.28 30 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($blood->blood_group)}}</text>
+                    <text transform="matrix(1 0 0 1.28 29 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($blood->blood_group)}}</text>
                     @else
-                    <text transform="matrix(1 0 0 1.28 32 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($blood->blood_group)}}</text>
+                    <text transform="matrix(1.1 0 0 1.28 32 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($blood->blood_group)}}</text>
                     @endif
                 </svg>                
             </div>

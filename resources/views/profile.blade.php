@@ -11,10 +11,10 @@
                 <li class="nav-item">
                     <a href="" data-target="#activity" data-toggle="tab" class="nav-link">Activity</a>
                 </li>
+                @if(Auth::id() === $user->id)
                 <li class="nav-item">
                     <a href="" data-target="#message" data-toggle="tab" class="nav-link">Messages</a>
                 </li>
-                @if(Auth::id() === $user->id)
                 <li class="nav-item">
                     <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
                 </li>
@@ -33,9 +33,9 @@
                                         </g>
                                     </g>
                                     @if(strlen($user->blood_group) > 2)
-                                    <text transform="matrix(1 0 0 1.28 30 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($user->blood_group)}}</text>
+                                    <text transform="matrix(1 0 0 1.28 29 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($user->blood_group)}}</text>
                                     @else
-                                    <text transform="matrix(1 0 0 1.28 32 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($user->blood_group)}}</text>
+                                    <text transform="matrix(1.1 0 0 1.28 32 51)" font-weight="bolder" font-size="0.75em" fill="#000" text-align="center">{{strtoupper($user->blood_group)}}</text>
                                     @endif
                                 </svg>
                             </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="tab-pane" id="activity">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <table class="table table-hover table-striped">
                                 <h4>Request Accepted</h4>
                                 <tbody>           
@@ -108,7 +108,7 @@
                                 </tbody>        
                             </table>        
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <table class="table table-hover table-striped">
                                 <h4>Request Created</h4>
                                 <tbody>        
@@ -133,8 +133,6 @@
                 </div>
                 <div class="tab-pane" id="message">
                     @if(Auth::id() === $user->id)
-
-                    @endif
                         <div class="list-group">
                             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
@@ -160,7 +158,8 @@
                                 <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                                 <small class="text-muted">Donec id elit non mi porta.</small>
                             </a>
-                        </div>                    
+                        </div>
+                    @endif
                 </div>
                 @if(Auth::id() === $user->id)
                 <div class="tab-pane" id="edit">
@@ -330,7 +329,7 @@
                 @endif
             </div>
         </div>
-        <div class="col-lg-3 order-1 text-center">             
+        <div class="col-lg-3 order-1 text-center mb-3">             
             @if(Auth::id() === $user->id)
             <div class="upload-container mb-3">
                 <div class="upload up-img"></div>
