@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\BloodRequest;
 use App\User;
+use App\BloodRequest;
+use App\Notifications\RequestMatched;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -42,14 +43,18 @@ class BloodRequestController extends Controller
             'location' =>'required|string',
         ]);
         
-        $request->user()
+        $new_request = $request->user()
             ->bloodRequest()
             ->create([
-                'description'=>$request->input['description'],
-                'required_date'=>$request->input['required_date'], 
-                'blood_group'=>$request->input['blood_group'], 
-                'location'=>$request->input['location'],
+                'description'=>$request->input('description'),
+                'required_date'=>$request->input('required_date'), 
+                'blood_group'=>$request->input('blood_group'), 
+                'location'=>$request->input('location'),
             ]);
+        $users = User::where('blood_group', $request->input('blood_group'))->get();
+        foreach ($users as $user) {            
+            $user->notify(new RequestMatched($new_request));
+        }
         return redirect('/home')
                 ->with('success', 'Your Request Successfully Posted');
     }

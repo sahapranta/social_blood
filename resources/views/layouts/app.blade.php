@@ -90,6 +90,24 @@
                                 <a class="btn btn-danger btn-sm rounded-pill mt-2" href="{{route('blood_request.create')}}">Create Request</a>                                
                             </li>
                             <li class="nav-item dropdown">
+                                <a id="notificationDropdown" href="#" class="nav-link mt-1 ml-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-bell"></i><span class="badge badge-pill badge-danger">{{
+                                        auth()->user()->unreadNotifications->count()
+                                    }}</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown" style="max-width:230px; overflow-x:hidden;">                                    
+                                    @forelse (auth()->user()->unreadNotifications as $notification)
+                                        <a class="dropdown-item text-wrap" href="{{route('blood_request.show', $notification->data['link'])}}">{{$notification->data['data']}}</a>
+                                    @empty
+                                    <a class="dropdown-item" href="#">No New Notifications</a>
+                                    @endforelse
+                                    @if(auth()->user()->unreadNotifications->count() > 0)
+                                        <div class="dropdown-divider"></div>                                     
+                                        <a href="#" class="btn btn-outline-primary mr-1 btn-sm float-right">Mark All as Read</a>
+                                    @endif
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>                                  
                                     <img src="{{asset('image/user/'.Auth::user()->avatar)}}" alt="blood" width="30" height="30" class="d-inline-block align-top"/>
                                     <span class="caret"></span>
