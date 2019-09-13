@@ -6,19 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ config('app.name', 'Social Blood') }}</title>
+    <title>Social Blood :A Platform to share your blood.</title>
+     <link rel="manifest" href="{{asset('/manifest.json')}}" />
+    <link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('image/icons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('image/icons/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('image/icons/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('image/icons/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('image/icons/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('image/icons/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('image/icons/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('image/icons/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('image/icons/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{asset('image/icons/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('image/icons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('image/icons/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('image/icons/favicon-16x16.png')}}">
+    <meta name="copyright"content="Pranta Saha">
+    <meta name="language" content="en">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="theme-color" content="#f84d61">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="social_blood">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-navbutton-color" content="#f84d61">
+    <meta name="msapplication-TileColor" content="#f84d61">
+    <meta name="msapplication-TileImage" content="{{ asset('image/icons/ms-icon-144x144.png') }}">
+    <meta name="msapplication-config" content="{{asset('browserconfig.xml')}}">
+    <meta name="application-name" content="social_blood">
+    <meta name="msapplication-tooltip" content="social_blood">
+    <meta name="msapplication-starturl" content="/">
+        <!-- Tap highlighting  -->
+    <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- Scripts -->
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//foliotek.github.io">
+
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://foliotek.github.io/Croppie/croppie.js" defer></script>
     
-
-    <!-- Fonts -->
-    <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
-	<link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="https://foliotek.github.io/Croppie/croppie.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />   		
 </head>
 <body>
 	<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

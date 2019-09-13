@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ config('app.name', 'Social Blood') }}</title>
-     <link rel="manifest" href="{{asset('/manifest.json')}}" />
+    <title>Social Blood :A Platform to share your blood.</title>
+    <link rel="manifest" href="{{asset('/manifest.json')}}" />
     <link rel="shortcut icon" href="{{ asset('image/icons/blood.png') }}" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('image/icons/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('image/icons/apple-icon-60x60.png')}}">
@@ -61,7 +61,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     <img src="{{asset('image/blood.svg')}}" alt="blood" width="30" height="30" class="d-inline-block align-top"/>
-                    {{ config('app.name', 'Social Blood') }}
+                    Social Blood
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
