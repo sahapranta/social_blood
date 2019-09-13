@@ -1,12 +1,4 @@
-@extends('layouts.app')
-@section('content')
-<div class="container">
-    @include('layouts._message')
-    <div class="search-form mb-3">
-        <blood-search :model="{{ json_encode($allRequests) }}"></blood-search>
-    </div>
-  <div class="row mb-3 mt-5">
-  @foreach($bloodRequests as $blood)        
+@foreach($bloodRequests as $blood)        
         <div class="col-sm-6 col-md-4 col-lg-3 text-center request-card">            
             <div class="card mb-4 shadow-sm card-shade">
                 @if($blood->is_updated)
@@ -54,10 +46,3 @@
             </div>
         </div>
     @endforeach
-  </div>
-    <div class='pagination justify-content-center'>
-        {{$bloodRequests->links()}}
-    </div>
-</div>
-
-@endsection

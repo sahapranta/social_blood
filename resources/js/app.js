@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('blood-search', require('./components/BloodRequestSearch.vue').default);
 Vue.component('location-search', require('./components/LocationSearch.vue').default);
+// Vue.component('card-list', require('./components/CardList.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

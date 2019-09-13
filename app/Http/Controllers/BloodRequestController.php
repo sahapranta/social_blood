@@ -44,7 +44,12 @@ class BloodRequestController extends Controller
         
         $request->user()
             ->bloodRequest()
-            ->create($request->only('description','required_date', 'blood_group', 'location'));
+            ->create([
+                'description'=>$request->input['description'],
+                'required_date'=>$request->input['required_date'], 
+                'blood_group'=>$request->input['blood_group'], 
+                'location'=>$request->input['location'],
+            ]);
         return redirect('/home')
                 ->with('success', 'Your Request Successfully Posted');
     }
