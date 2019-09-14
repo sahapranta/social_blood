@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', 'BloodRequestController@index')->name('home');
-
+Route::get('/markasread', 'MarkAsReadController@index')->name('markAsRead');
 Auth::routes();
 
 Route::resource('blood_request', 'BloodRequestController')

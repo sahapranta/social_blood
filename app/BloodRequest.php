@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\Notifications\DonationSuccess;
 use App\User;
 
 class BloodRequest extends Model
@@ -46,9 +47,12 @@ class BloodRequest extends Model
             $donor->updateExistingPivot($user, ['donated'=>$mark]);
             if ($mark === 1) {
                 $user->increment('donation_count');
+                $msg = $this->user->name ." has marked your donation.";
             }else {                
                 $user->decrement('donation_count');
+                $msg = $this->user->name ." has removed your donation.";            
             }            
+            $user->notify(new DonationSuccess($this->id, $msg));         
         }
 
     }
@@ -56,7 +60,9 @@ class BloodRequest extends Model
     public function giveComment(User $user, $comment){
         $donor = $this->requestAccept();
         if ($donor->where('user_id', $user->id)->exists()) {
-            $donor->updateExistingPivot($user, ['comments'=>$comment]);            
+            $donor->updateExistingPivot($user, ['comments'=>$comment]); 
+            $msg = $this->user->name ." Commented for your donation.";
+            $user->notify(new DonationSuccess($this->id, $msg));     
         }
     }
 }

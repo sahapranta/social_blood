@@ -91,9 +91,12 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="notificationDropdown" href="#" class="nav-link mt-1 ml-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fa fa-bell"></i><span class="badge badge-pill badge-danger">{{
-                                        auth()->user()->unreadNotifications->count()
+                                    <i class="fa fa-bell"></i>
+                                    @if(auth()->user()->notification_count)
+                                    <span class="badge badge-pill badge-danger">{{
+                                        auth()->user()->notification_count
                                     }}</span>
+                                    @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown" style="max-width:230px; overflow-x:hidden;">                                    
                                     @forelse (auth()->user()->unreadNotifications as $notification)
@@ -101,9 +104,9 @@
                                     @empty
                                     <a class="dropdown-item" href="#">No New Notifications</a>
                                     @endforelse
-                                    @if(auth()->user()->unreadNotifications->count() > 0)
-                                        <div class="dropdown-divider"></div>                                     
-                                        <a href="#" class="btn btn-outline-primary mr-1 btn-sm float-right">Mark All as Read</a>
+                                    @if(auth()->user()->notification_count)
+                                        <div class="dropdown-divider"></div>                                
+                                        <a href="{{route('markAsRead')}}" class="btn btn-outline-primary mr-1 btn-sm float-right">Mark All as Read</a>
                                     @endif
                                 </div>
                             </li>

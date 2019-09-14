@@ -3,10 +3,8 @@
 <p align="center">
 <a href="https://socialblood.000webhostapp.com/"><img src="https://travis-ci.org/sahapranta/social_blood.svg" alt="Build Status"></a>
 <a href="https://david-dm.org/sahapranta/social_blood"><img src="https://david-dm.org/sahapranta/social_blood.svg" alt="Dependencies"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
     
  <img alt="Heroku" src="https://heroku-badge.herokuapp.com/?app=socialblood" >
-<img src="https://img.shields.io/github/license/sahapranta/social_blood" alt='license'>
 
 </p>
 
@@ -17,12 +15,13 @@ This is a simple basic laravel 5.8 and vue based practice. The idea was creating
 ** [View Live Here](https://socialblood.000webhostapp.com/) **
 
 - User can register with email and blood group
-- After Registration he/she need to complete profile information [skipable]
+- After Registration he/she need to complete profile information [ skipable ]
 - Home route is where the request listed and one can search with any keyword
 - By clicking view button one can view details about the request
 - Only login user with same blood group can wish for donate
 - Right side of the view page contains the list of user who wants to donate blood
 - Below the description the person who donated will be listed
+- User will get notification [ email ] if blood group match with recently created request.
 
 
 ### ScreenShot
