@@ -144,20 +144,6 @@
         <div class="container">
             <span class="text">Copyright &copy; {{ now()->year }} Social Blood By <a href="https://sahapranta.github.io" target="_blank">Pranta Saha</a></span>
 		</div>
-	</footer>
-    <script type="text/javascript">
-        (function() {
-          if ('serviceWorker' in navigator) {
-            console.log('CLIENT: service worker registration in progress.');
-            navigator.serviceWorker.register('https://socialblood.herokuapp.com/js/service-worker.js').then(function() {
-              console.log('CLIENT: service worker registration complete.');
-            }, function() {
-              console.log('CLIENT: service worker registration failure.');
-            });
-          } else {
-            console.log('CLIENT: service worker is not supported.');
-          }
-        })();
-    </script>
+	</footer>    
 </body>
 </html>

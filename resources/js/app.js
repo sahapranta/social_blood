@@ -21,7 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('blood-search', require('./components/BloodRequestSearch.vue').default);
 Vue.component('location-search', require('./components/LocationSearch.vue').default);
-// Vue.component('card-list', require('./components/CardList.vue').default);
+Vue.component('card-list', require('./components/CardList.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -141,3 +141,15 @@ let rawImage;
     }
 
 
+(function() {
+    if ('serviceWorker' in navigator) {
+        console.log('CLIENT: service worker registration in progress.');
+        navigator.serviceWorker.register('js/service-worker.js').then(function() {
+        console.log('CLIENT: service worker registration complete.');
+        }, function() {
+        console.log('CLIENT: service worker registration failure.');
+        });
+    } else {
+        console.log('CLIENT: service worker is not supported.');
+    }
+})();

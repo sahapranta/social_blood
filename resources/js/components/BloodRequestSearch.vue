@@ -15,9 +15,12 @@
                 </div>
                 <div class="search-list1" v-if="searching">                    
                     <a :href="'blood_request/'+ result[1].id" v-for="result in results" :key="result[1].id">Need {{result[1].blood_group}} blood in {{result[1].location}} before {{new Date(result[1].required_date).toLocaleDateString()}}. <hr/></a> 
-                </div>              
+                </div>         
             </div>
         </div>
+        <!-- <div class="mt-3">
+            <card-list :blood="model"></card-list>
+        </div> -->
     </div>
 </template>
 

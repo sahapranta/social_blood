@@ -122,7 +122,7 @@
 			</div>
 		</div>
 	</nav>
-	<main class="py-4">
+	<main class="py-4" id="app">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 my-auto mx-auto">

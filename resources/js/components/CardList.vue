@@ -1,7 +1,8 @@
 <template>
-        <div class="col-sm-6 col-md-4 col-lg-3 text-center request-card">                        
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center request-card" v-for="blod in bloods">                        
             <div class="card mb-4 shadow-sm card-shade">
-                <h5 class="badge red-shade text-center">Hakd</h5>
+                <h5 class="badge red-shade text-center text-wrap">{{blod.created_at}}</h5>
             </div>
             <div class="card-header">
                 <h5 class="my-0 font-weight-normal">{{new Date().toLocaleDateString()}}</h5>
@@ -24,20 +25,20 @@
                 </a>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'card-list',
-    props:['model'],
+    props:['blood'],
     data(){
-        return{
-            bloods:[],
+        return{            
+            bloods:Object.entries(this.blood).map(([key, value]) => ( value )) || [],
         }
     },
-    mounted(){
-        this.bloods = [...Object.entries(this.model)];
-        console.log(this.bloods);
+    computed:{
+        
     }
 
 }
